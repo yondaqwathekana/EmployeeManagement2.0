@@ -12,7 +12,6 @@ public class Employee {
     private String firstName;
     private String lastName;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "email")
     private Contact contact;
 
     protected Employee(){}
