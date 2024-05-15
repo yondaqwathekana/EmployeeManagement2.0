@@ -51,26 +51,10 @@ public class Contact {
             return this;
         }
         public Builder setMobile(String mobile) {
-            try {
-                Long mobilePhone = Long.valueOf(mobile);
-            } catch (NumberFormatException nfe){
-                System.err.println("Incorrect number format. Number must consist of digits only");
-                return null;
-            }
-            if(mobile.length() != 10)
-                return null;
             this.mobile = mobile;
             return this;
         }
         public Builder setWorkTelephone(String workTelephone) {
-            try {
-                Long workPhone = Long.valueOf(workTelephone);
-            } catch (NumberFormatException nfe) {
-                System.err.println("Incorrect number format. Number must consist of digits only");
-                return null;
-            }
-            if(workTelephone.length() != 10)
-                return null;
             this.workTelephone = workTelephone;
             return this;
         }

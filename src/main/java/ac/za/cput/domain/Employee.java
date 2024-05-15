@@ -1,8 +1,8 @@
 package ac.za.cput.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+import org.hibernate.engine.internal.Cascade;
+
 import java.util.Objects;
 
 @Entity
@@ -11,7 +11,8 @@ public class Employee {
     private long employeeNumber;
     private String firstName;
     private String lastName;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "email")
     private Contact contact;
 
     protected Employee(){}
